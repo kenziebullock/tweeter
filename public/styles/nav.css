@@ -1,27 +1,35 @@
 #nav-bar {
-    background-color: #00a087;
+    background-color: rgb(109, 122, 255, 0.75);
     color: #e8fdff;
     height: 80px;
-    padding: 0em 2em;
+    display: flex;
+    justify-content: flex-start;
+
+    /* padding: 0em 2em;
     position: inherit;
     top: 0;
     right: 0;
-    left: 0;
+    left: 0; */
 }
 
 #nav-bar img.logo {
     width: 80px; 
     height: 80px;
-    float: left;
+    margin-left: 2em;
+    /* float: left; */
 }
 
 #nav-bar .header {
-    position: absolute;
+    /* position: absolute; */
     padding: 20px 0 0 10px;
     line-height: 1em;
     font-size: 2em;
-    float: left;
+    /* float: left; */
 }
+
+/* #nav-bar::after {
+    clear: both;
+} */
 
 .nav {
 }
