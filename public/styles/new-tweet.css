@@ -23,3 +23,13 @@
 span.counter {
     float: right;
 }
+
+#error-messages {
+    display: none;
+    color: white;
+    background: rgba(243, 3, 3, 0.75);
+    border-radius: 2px;
+    padding: 3px;
+    box-shadow: 1px 1px 1px #aaaaaa;
+
+}

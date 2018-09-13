@@ -28,44 +28,25 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter App</span>
+      <button id="compose-button">Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div class="">
+      <div id="new-tweet-id">
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <form method="POST" action="/tweets">
             <textarea id="tweet-text-area" name="text" placeholder="What are you humming about?"></textarea>
-            <input type="submit" value="Tweet">
+            <input id="submitTweet" type="submit" value="Tweet">
             <span id="text-counter" class="counter">140</span>
+            <label id="error-messages">Error!</label>
           </form>
         </section>
       </div>
+      <div class="new-tweets">
 
-      <!-- <section>
-        <article class="tweet-container">
-          
-          <header class="tweet-header">
-            <img class="tweet-avatar" src="/images/bird.png">
-            <h4 class= "tweet-name">Some Guy</h4>
-            <h6 class="tweet-handle">@someguy</h6>
-          </header>
-            
-          <p class="tweet-body">Here is my tweet yo!</p>
-          
-          <footer class="tweet-footer"> 
-            <div class ="footer-items">
-              <p class="date">10 years ago</p>
-            </div>
-            <div class="footer-items">
-              <img class="glyphs" src="/images/flag.png">
-              <img class="glyphs" src="/images/retweet.png">
-              <img class="glyphs" src="/images/heart.png">
-            </div>
-          </footer>
-        </article>
-      </section> -->
+      </div>
     </main>
 
   </body>

@@ -31,5 +31,15 @@
     clear: both;
 } */
 
-.nav {
+#compose-button {
+    height: 50px;
+    opacity: 0.75;
+    border-radius: 10px;
+    margin: 1em 0 0 10em;
+    color: grey;
+}
+
+#compose-button:hover {
+    opacity: 1;
+    color: black;
 }

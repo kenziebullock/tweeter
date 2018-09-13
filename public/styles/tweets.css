@@ -28,7 +28,7 @@
 
 .date {
     float: left;
-    width: 60px;
+    /* width: 60px; */
 }
 
 img.tweet-avatar {
@@ -70,6 +70,8 @@ img.tweet-avatar {
 .tweet-body {
     padding: 10px;
     opacity: 1;
+    word-wrap: break-word;
+    /* overflow: hidden; */
 }
 
 .tweet-container:hover {
