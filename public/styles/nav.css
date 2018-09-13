@@ -1,5 +1,5 @@
 #nav-bar {
-    background-color: rgb(109, 122, 255, 0.75);
+    background-color: rgb(106, 26, 232, 0.6);
     color: #e8fdff;
     height: 80px;
     display: flex;
@@ -14,8 +14,8 @@
 
 #nav-bar img.logo {
     width: 80px; 
-    height: 80px;
-    margin-left: 2em;
+    height: 75px;
+    margin: 5px 0 0 2em;
     /* float: left; */
 }
 
