@@ -1,5 +1,8 @@
 #nav-bar {
-    background-color: rgb(17, 175, 232, 0.75);
+    background: 
+        linear-gradient(purple 0%, red 90%), 
+        linear-gradient(to right, purple 0%, blue 90%);
+    background-blend-mode: screen, difference, lighten;
     color: #e8fdff;
     height: 80px;
     display: flex;
@@ -17,7 +20,7 @@
     padding: 20px 0 0 10px;
     line-height: 1em;
     font-size: 2em;
-    color: black;
+    color: white;
 }
 
 #compose-button {
