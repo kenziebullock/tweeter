@@ -8,10 +8,9 @@ CSS built with responsive design in mind.
 
 ## Final Product
 
-!{'screenshot of'}()
-!{'screenshot of'}()
-!{'screenshot of'}()
-
+!{'screenshot of main page'}(https://github.com/kenziebullock/tweeter/blob/master/docs/front-page.png?raw=true)
+!{'screenshot of error message'}(https://github.com/kenziebullock/tweeter/blob/master/docs/error-message.png?raw=true)
+!{'screenshot of hidden compose box'}(https://github.com/kenziebullock/tweeter/blob/master/docs/compose-hidden.png?raw=true)
 ## Dependencies
 
 - Express
