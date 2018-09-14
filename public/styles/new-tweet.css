@@ -4,6 +4,12 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+#submit-tweet {
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(17, 175, 232, 0.75);
+}
   
 .new-tweet h2:after {
     content: ' ';
@@ -31,5 +37,5 @@ span.counter {
     border-radius: 2px;
     padding: 3px;
     box-shadow: 1px 1px 1px #aaaaaa;
-
 }
+

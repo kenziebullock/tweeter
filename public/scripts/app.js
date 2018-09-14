@@ -3,63 +3,64 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Fake data taken from tweets.json
-
-// code refactor starts here!
-// $(`<header class="tweet-header">
-//                         <img class="tweet-avatar" src=${tweetObject.user.avatars.small}>
-//                         <h4 class= "tweet-name">${tweetObject.user.name}</h4>
-//                         <h6 class="tweet-handle">${tweetObject.user.handle}</h6>
-//                     </header>`);
-
-
-// const tweetHeader = function(headerInput) {
-//     let $header = $('<header>', {'class': 'tweet-header'})
-//         .append($('<img>', {'class': 'tweet-avatar', 'src': headerInput.avatars.small}))
-//         .append($('<h4>', {'class': 'tweet-name'}).text(headerInput.name))
-//         .append('<h6>', {'class': 'tweet-handle'}).text(headerInput.handle);
-//     console.log($header);
-//     return $header;
-// }
-
-// const tweetBody = function(bodyInput) {
-
-// }
-
-
-
-const createTweetElement = function(tweetObject) {
-    
-    let $newTweet = $("<article>").addClass("tweet-container");
-    let header = $(`<header class="tweet-header">
-                        <img class="tweet-avatar" src=${tweetObject.user.avatars.small}>
-                        <h4 class= "tweet-name">${tweetObject.user.name}</h4>
-                        <h6 class="tweet-handle">${tweetObject.user.handle}</h6>
-                    </header>`);
-    let body = $('<p>', {'class': 'tweet-body'}).text(tweetObject.content.text);
-    // $(`<p class="tweet-body">${tweetObject.content.text}</p>`);
-    let footer = $(`<footer class="tweet-footer"> 
-                        <div class ="footer-items">
-                            <p class="date">${Date(tweetObject.created_at)}</p>
-                        </div>
-                        <div class="footer-items">
-                            <img class="glyphs" src="/images/flag.png">
-                            <img class="glyphs" src="/images/retweet.png">
-                            <img class="glyphs" src="/images/heart.png">
-                        </div>
-                    </footer>`);
-    $($newTweet).append(header, [body, footer]);
-    return $newTweet;
-}
-
-function renderTweets(tweets) {
-    tweets.forEach(function(tweet) {
-        let $currentTweet = createTweetElement(tweet);
-        $('.new-tweets').prepend($currentTweet);
-    });
-}
 
 $( document ).ready(function() {
+    
+    // function to convert milliseconds to time ago
+    const timeConversion = function(millisec) {
+        
+        // was using moment, some dates in database are saved as 'a few seconds ago'
+        if (!millisec) {
+            millisec = Date.now() - 1536945395171;
+        }
+        let seconds = Math.floor((millisec / 1000).toFixed(1));
+        let minutes = Math.floor((millisec / (1000 * 60)).toFixed(1));
+        let hours = Math.floor((millisec / (1000 * 60 * 60)).toFixed(1));
+        let days = Math.floor((millisec / (1000 * 60 * 60 * 24)).toFixed(1));
+        
+        if (seconds < 60) {
+            return (seconds === 1) ? seconds + ' second ago' : seconds + ' seconds ago';
+        } else if (minutes < 60) {
+            return (minutes === 1) ? minutes + ' minute ago' : minutes + ' minutes ago';
+        } else if (hours < 60) {
+            return (hours === 1) ? hours + ' hour ago' : hours + ' hours ago';
+        } else {
+            return (days === 1) ? days + ' day ago' : days + ' days ago';
+        }
+    }
+
+    // creates tweet element html
+    const createTweetElement = function(tweetObject) {
+        let $newTweet = $("<article>").addClass("tweet-container");
+        let header = $(`<header class="tweet-header">
+                            <img class="tweet-avatar" src=${tweetObject.user.avatars.small}>
+                            <h4 class= "tweet-name">${tweetObject.user.name}</h4>
+                            <h6 class="tweet-handle">${tweetObject.user.handle}</h6>
+                        </header>`);
+        let body = $('<p>', {'class': 'tweet-body'}).text(tweetObject.content.text);
+        let footer = $(`<footer class="tweet-footer"> 
+                            <div class ="footer-items">
+                                <p class="date">${timeConversion(Date.now() - tweetObject.created_at)}</p>
+                            </div>
+                            <div class="footer-items">
+                                <img class="glyphs" src="/images/flag.png">
+                                <img class="glyphs" src="/images/retweet.png">
+                                <img class="glyphs" src="/images/heart.png">
+                            </div>
+                        </footer>`);
+        $($newTweet).append(header, [body, footer]);
+        return $newTweet;
+    }
+    
+    // renders tweets
+    function renderTweets(tweets) {
+        tweets.forEach(function(tweet) {
+            let $currentTweet = createTweetElement(tweet);
+            $('.new-tweets').prepend($currentTweet);
+        });
+    }
+    
+    // loads tweets from database
     function loadTweets() {
         $.ajax('/tweets', { method: 'GET' })
         .then(function(tweets) {
@@ -68,7 +69,8 @@ $( document ).ready(function() {
     }
     loadTweets();
     
-    $('#submitTweet').on('click', function(event) {
+    // async ajax submit
+    $('#submit-tweet').on('click', function(event) {
         event.preventDefault();
         
         // grab content of tweet
@@ -102,9 +104,10 @@ $( document ).ready(function() {
         }
     });
 
+    // compose button to hide and show compose tweet
     $('#compose-button').on('click', function() {
         $('#new-tweet-id').slideToggle(500);
         $('#tweet-text-area').focus();
-    })
+    });
 
 });

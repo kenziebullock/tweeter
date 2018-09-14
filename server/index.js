@@ -5,6 +5,7 @@
 const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
+
 const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,6 +23,9 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     console.log(`Failed to connect to ${MONGODB_URI}`);
     throw err;
   }
+  
+  console.log('Successfully connected to mongodb')
+
   const DataHelpers = require("./lib/data-helpers.js")(db);
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
