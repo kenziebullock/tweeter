@@ -34,7 +34,7 @@ $( document ).ready(function() {
         let $newTweet = $("<article>").addClass("tweet-container");
         let header = $(`<header class="tweet-header">
                             <img class="tweet-avatar" src=${tweetObject.user.avatars.small}>
-                            <h4 class= "tweet-name">${tweetObject.user.name}</h4>
+                            <h3 class= "tweet-name">${tweetObject.user.name}</h3>
                             <h6 class="tweet-handle">${tweetObject.user.handle}</h6>
                         </header>`);
         let body = $('<p>', {'class': 'tweet-body'}).text(tweetObject.content.text);

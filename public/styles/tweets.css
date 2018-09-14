@@ -34,6 +34,7 @@
 
 .date {
     float: left;
+    margin-left: 1em;
     /* opacity: 0.75; */
 }
 
