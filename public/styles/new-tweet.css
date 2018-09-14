@@ -33,9 +33,21 @@ span.counter {
 #error-messages {
     display: none;
     color: white;
-    background: rgba(243, 3, 3, 0.75);
+    background: #c51244;
     border-radius: 2px;
     padding: 3px;
     box-shadow: 1px 1px 1px #aaaaaa;
+    position: relative;
+    margin-left: 1em;
 }
 
+#error-messages:before{ 
+    content: ''; 
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #c51244;
+    position: absolute;
+    top: -10px; 
+  }

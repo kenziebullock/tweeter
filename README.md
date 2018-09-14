@@ -1,17 +1,32 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple single-page Twitter clone. It was created as a project for Lighthouse Labs. This app uses jQuery, AJAX, HTML5, CSS3, and express. A user can post tweets that generate random user names and handles. The tweet will show up on the top of the page showing how much time has passed since the tweet was made. Tweets are stored on mongoDB. A character counter is shown which counts down from 140 while the user is typing. 
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Error messaging shows up when text field is blank or there are too many characters.
 
-## Getting Started
+CSS built with responsive design in mind.
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+## Final Product
+
+!{'screenshot of'}()
+!{'screenshot of'}()
+!{'screenshot of'}()
 
 ## Dependencies
 
 - Express
 - Node 5.10.x or above
+- Body-Parser
+- Chance
+- md5
+- mongoDB
+
+## Installing
+
+- Run `npm` install with the above dependencies.
+- Run npm index.js
+- Open browser to http://localhost:8080
+- Enjoy tweeting!
+
+Version 1.0.0
+by Kenzie Bullock

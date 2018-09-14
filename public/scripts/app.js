@@ -19,7 +19,7 @@ $( document ).ready(function() {
         let days = Math.floor((millisec / (1000 * 60 * 60 * 24)).toFixed(1));
         
         if (seconds < 60) {
-            return (seconds === 1) ? seconds + ' second ago' : seconds + ' seconds ago';
+            return 'a few seconds ago';
         } else if (minutes < 60) {
             return (minutes === 1) ? minutes + ' minute ago' : minutes + ' minutes ago';
         } else if (hours < 60) {
@@ -40,7 +40,7 @@ $( document ).ready(function() {
         let body = $('<p>', {'class': 'tweet-body'}).text(tweetObject.content.text);
         let footer = $(`<footer class="tweet-footer"> 
                             <div class ="footer-items">
-                                <p class="date">${timeConversion(Date.now() - tweetObject.created_at)}</p>
+                                <p class="date">${timeConversion((Date.now() + 1100) - tweetObject.created_at)}</p>
                             </div>
                             <div class="footer-items">
                                 <img class="glyphs" src="/images/flag.png">
