@@ -1,7 +1,9 @@
 #nav-bar {
     background: 
-        linear-gradient(purple 0%, red 90%), 
-        linear-gradient(to right, purple 0%, blue 90%);
+        /* linear-gradient(rgb(122, 0, 122, 0.75) 0%, rgb(0, 0, 255, 0.75)), 
+        linear-gradient(to right, rgb(122, 0, 122, 0.75) 0%, rgb(0, 0, 255, 0.75) 90%); */
+        linear-gradient(rgb(215, 124, 255, 0.75) 0%, rgb(117, 191, 255, 0.75)), 
+        linear-gradient(to right, rgb(151, 255, 172, 0.75) 0%, rgb(0, 0, 255, 0.75) 90%);
     background-blend-mode: screen, difference, lighten;
     color: #e8fdff;
     height: 80px;
@@ -20,7 +22,8 @@
     padding: 20px 0 0 10px;
     line-height: 1em;
     font-size: 2em;
-    color: white;
+    color: rgb(215, 124, 255);
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
 }
 
 #compose-button {
